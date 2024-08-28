@@ -43,7 +43,7 @@ body {
     backdrop-filter: blur(10px);
     gap: 20px;
     align-items: center;
-    border-radius: 0 0 15px 15px; /* Top corners are not rounded */
+    border-radius: 0 0 15px 15px;
 }
 
 .profile-picture {
