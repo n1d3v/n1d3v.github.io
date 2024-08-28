@@ -76,6 +76,14 @@ h2 {
 
 .links a {
     display: inline-block;
+    color: #ffffff50;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.links a:hover {
+    color: #ddd;
+    transform: scale(1.1);
 }
 
 .links img {
