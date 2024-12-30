@@ -122,3 +122,11 @@ a:hover {
 #clock {
     font-weight: 600;
 }
+
+.ad {
+    border: 1px solid #000;
+}
+
+.ad-link:hover {
+    filter: brightness(1);
+}
