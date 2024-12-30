@@ -123,10 +123,10 @@ a:hover {
     font-weight: 600;
 }
 
-.ad {
+.cool-image {
     border: 1px solid #000;
 }
 
-.ad-link:hover {
+.cool-image-link:hover {
     filter: brightness(1);
 }
