@@ -3,9 +3,13 @@ function updateClock() {
         timeZone: 'Europe/London', 
         hour: '2-digit', 
         minute: '2-digit', 
+        second: '2-digit',
         hour12: false 
     };
-    const now = new Date().toLocaleTimeString('en-GB', options);
+
+    const formatter = new Intl.DateTimeFormat('en-GB', options);
+    const now = formatter.format(new Date());
+
     document.getElementById('clock').textContent = `for me it is: ${now}`;
 }
 
