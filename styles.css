@@ -119,7 +119,7 @@ body {
     display: inline-block;
 }
 
-.sidebar-info *:not(h1):not(p) {
+.sidebar-info *:not(h1):not(.about-bio) {
     color: #999;
 }
 
