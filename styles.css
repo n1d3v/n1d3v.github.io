@@ -141,7 +141,7 @@ body {
 }
 
 .projects-ul li::before, .user-details-ul li::before {
-    content: "\25CB";
+    content: "\2022";
     margin-right: 8px;
 }
 
