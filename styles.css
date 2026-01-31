@@ -1,176 +1,183 @@
+/* This is made with Internet Explorer 11 in mind. */
+/* This does use some nasty hacks, for example the borders for the navigation bar items. */
+
+@font-face {
+    font-family: "Drift";
+    src: url("assets/fonts/drift-artwiz.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: Drift, monospace;
+    color: white;
 }
 
-html, body, .container-wrapper {
-    height: 100%;
-    width: 100%;
+h1 {
+    font-family: 'VT323', sans-serif;
+    font-weight: 500;
 }
 
-body {
-    background: url('Assets/Background.jpg') no-repeat center/cover;
-}
-
-a, p {
+a, p, li, span {
+    /* Any other size makes it look blurry :/ */
     font-size: 12px;
+}
+
+a {
     text-decoration: none;
 }
 
-h3 {
-    font-size: 16px;
-    font-weight: normal;
-    color: #002a9e;
+a:hover {
+    text-decoration: underline;
 }
 
-.container-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.container {
-    position: relative;
-    width: 800px;
-    height: 500px;
-    padding: 6px;
-    overflow: hidden;
-    background-color: #9B7D4788;
-    border: 1px solid #D6E1E7;
-    border-radius: 7px;
-    box-shadow: 0 0 0 1px #09161C, 0 12px 30px rgba(0, 0, 0, 0.9);
-    z-index: 1;
-}
-
-.container::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    backdrop-filter: blur(3px);
-    z-index: -2;
-}
-
-.container::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: url('Assets/Reflection.png') no-repeat;
-    background-size: 200%;
-    opacity: 0.8;
-    z-index: -1;
-    pointer-events: none;
-}
-
-.content {
-    display: flex;
-    flex-direction: column;
+html, body {
     width: 100%;
     height: 100%;
-    background-color: white;
-    border: 1px solid #5A4952;
-    border-radius: 1px;
-    box-shadow: 0 0 0 1px #EAE0E680;
 }
 
-.user-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    padding: 12px 20px;
-    margin-top: 32px;
+body {
+    background:
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+        url(assets/website-background.gif) center / cover no-repeat;
 }
 
-.command-bar {
-    position: fixed;
-    width: 800px;
-    height: 32px;
-    padding: 0 3px;
-    background: linear-gradient(to bottom, #f7c763, #f4a500 50%, #cc8400 50%, #f6b136);
-    border-bottom: 1px solid #5A4952;
-    display: flex;
-    align-items: center;
+.content-wrapper {
+    margin: 0 auto;
+    padding: 10px 0px;
     box-sizing: border-box;
-    z-index: 9;
+    width: 1000px;
+    height: 100%;
 }
 
-.nav-link {
+.username-nav {
+    font-size: 32px;
+    padding-bottom: 12px;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
+}
+
+.navigation-bar {
     display: flex;
     align-items: center;
-    justify-content: center;
-    height: 24px;
-    padding: 0 12px;
-    margin: 0 2px;
-    font-size: 12px;
-    color: white;
-    background: transparent;
-    border: none;
-    border-radius: 2px;
-    text-shadow: 0 0 2px black, 0 0 6px rgba(0, 0, 0, 0.9);
-    cursor: default;
-    user-select: none;
+    width: 100%;
+    height: 15px;
+    padding: 15px 5px;
+    box-sizing: border-box;
+    background-color: rgba(0,0,0,0.55);
 }
 
-.nav-link:hover {
-    background: linear-gradient(to bottom, #ffffff40, #fff6 50%, #ffffff40 50%, #ffffff1a);
-    outline: 1px solid rgba(0, 0, 0, 0.5);
-    box-shadow: inset 0 0 0 1px #ffffff80;
+/* Hack used for Internet Explorer 11 support, cannot use the gap attribute. */
+.navigation-bar {
+    display: flex;
 }
 
-.nav-link:active {
-    background: #ffae00;
-    outline: 1px solid rgba(0, 0, 0, 0.75);
-    box-shadow: inset 0 0 8px #dd9700, inset 0 0 0 1px #ffffffbf;
+.navigation-bar > * {
+    position: relative;
+    padding: 0 10px;
 }
 
-.nav-link:active .span-nav-link {
-    transform: translate(1px, 1px);
+.navigation-bar > *:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -5px;
+    transform: translateY(-50%);
+    height: 1em;
+    width: 1px;
+    background: white;
 }
 
-.header-user {
-    padding-bottom: 3px;
+.navigation > *:first-child {
+    padding: 0;
 }
 
-.header-content {
+.navigation-bar > *:not(:last-child) {
+    margin-right: 10px;
+}
+
+/* Donation link, this is separate from all of the hacks so you know where they are for reference. */
+.donation-link {
     display: flex;
     align-items: center;
 }
-  
-.header-text {
-    white-space: nowrap;
-    font-size: 12px;
-    margin-right: 6px;
-}
-  
-.header-line {
-    flex-grow: 1;
-    height: 1px;
-    background-color: #ccc;
+
+.donation-link span {
+    padding-left: 5px;
 }
 
-.content-box {
+.site-content {
+    display: flex;
+    padding-top: 10px;
+}
+
+.sidebar-info {
+    margin-right: 10px;
+    padding: 15px;
+    background-color: rgba(0,0,0,0.55);
+    display: inline-block;
+}
+
+.sidebar-info *:not(h1):not(p) {
+    color: #999;
+}
+
+.sidebar-info h1 {
+    font-size: 26px;
+    border-bottom: solid 1px #666;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+}
+
+.profile-pic-sb {
     padding-bottom: 5px;
 }
 
-.content-of-the-content-box {
+.projects-ul, .user-details-ul {
+    padding-top: 10px;
+    padding-left: 15px;
+    list-style-position: outside;
+}
+
+.projects-ul li::before, .user-details-ul li::before {
+    content: "•";
+    margin-right: 8px;
+}
+
+.projects-ul li, .user-details-ul li {
     display: flex;
     align-items: center;
-    padding-left: 20px;
+    padding-bottom: 6px;
 }
 
-.content-pfp {
-    width: 55px;
-    margin-left: 10px;
+.projects-ul li:last-child, .user-details-ul li:last-child {
+    padding-bottom: 0;
 }
 
-.content-naticord {
-    width: 50px;
-    margin-left: 10px;
+.projects-ul li span, .user-details-ul li span {
+    padding-left: 8px;
 }
 
-.badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    padding-top: 10px;
+.about-user {
+    padding: 10px 15px;
+    background-color: rgba(0,0,0,0.55);
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.about-user h1 {
+    font-size: 24px;
+    border-bottom: solid 1px #666;
+    padding-bottom: 4px;
+    margin-bottom: 10px;
+}
+
+.about-user p {
+    line-height: 1rem;
+    padding-bottom: 6px;
+}
+
+.about-user a {
+    color: #00AFF0;
 }
