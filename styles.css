@@ -141,7 +141,7 @@ body {
 }
 
 .projects-ul li::before, .user-details-ul li::before {
-    content: "•";
+    content: "\25CB";
     margin-right: 8px;
 }
 
