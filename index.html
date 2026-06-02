@@ -2,76 +2,145 @@
 <html>
     <head>
         <title>patricktbp's website!</title>
-        <link rel="stylesheet" href="styles.css">
-        <link rel="icon" href="assets/website-icon.png">
+        <link rel="icon" href="Assets/Icons/favicon.ico">
+
+        <meta charset="UTF-8">
+        <meta name="description" content="Software developer and graphic designer based in Ireland.">
+        <meta name="author" content="patricktbp">
+        <meta name="theme-color" content="#262626">
+
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="patricktbp">
+        <meta property="og:title" content="patricktbp's website!">
+        <meta property="og:description" content="Software developer and graphic designer based in Ireland.">
+        <meta property="og:url" content="https://tbp.wtf">
+        <meta property="og:image" content="https://tbp.wtf/Assets/Icons/favicon.ico">
+        <meta property="og:image:alt" content="icon of 'TBP' in a similar style to deviantART's old logo.">
+
+        <link rel="stylesheet" href="Assets/Stylesheets/global.css">
+        <link rel="stylesheet" href="Assets/Stylesheets/Pages/home.css">
+        <link rel="stylesheet" href="Assets/Stylesheets/Pages/Controls/navigation.css">
+        <link rel="stylesheet" href="Assets/Stylesheets/Pages/Controls/work-card.css">
+
+        <!-- Ubuntu, the font used in this website. -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">    
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+        <script src="Assets/Scripts/navigation.js" defer></script>
     </head>
     <body>
-        <div class="content-wrapper">
-            <div class="site-navigation">
-                <a href="/">
-                    <h1 class="username-nav">patricktbp</h1>
-                </a>
-                <div class="navigation-bar">
-                    <a href="/">homepage</a>
-                    <a href="#">blog</a>
-                    <a href="https://ko-fi.com/patrickpbt" class="donation-link">
-                        <img src="assets/navigation/donation-heart.png" />
-                        <span>donate!</span>
+        <div class="page-content-wrapper">
+            <div class="navigation-sidebar">
+                <div class="navigation-about">
+                    <span class="avatar">
+                        <img src="https://avatar-cyan.vercel.app/api/pfp/1403109929669230655/smallimage" alt="Discord profile picture">
+                    </span>
+                    <div class="normal-info">
+                        <h3>patricktbp</h3>
+                        <p>software developer!</p>
+                    </div>
+                </div>
+                <div class="navigation-links">
+                    <a href="#home" class="navigation-button selected">
+                        <img src="Assets/Icons/Sidebar/home.png" alt="Home icon" class="navigation-icon">
+                        <p>Home</p>
+                    </a>
+                    <a href="#showcase" class="navigation-button">
+                        <img src="Assets/Icons/Sidebar/showcase.png" alt="Showcase icon" class="navigation-icon">
+                        <p>Showcase</p>
+                    </a>
+                    <a href="#contact" class="navigation-button">
+                        <img src="Assets/Icons/Sidebar/contact.png" alt="Contact icon" class="navigation-icon">
+                        <p>Contact</p>
                     </a>
                 </div>
-            </div>
-            <div class="site-content">
-                <div class="sidebar-info">
-                    <!-- User information, just the profile picture and name -->
-                    <img src="assets/profile-picture.png" class="profile-pic-sb" />
-                    <h1 class="username-sb">patricktbp</h1>
-                    <!-- Quote about the user, this was just for fun -->
-                    <p style="font-style: italic;">"O ty chuju" - TlenekKutasu69</p>
-                    <p class="about-bio">I program from time to time, possibly.</p>
-                    <!-- The user details, this is like their locale, socials, etc -->
-                    <ul class="user-details-ul">
-                        <li>
-                            <img src="assets/social-icons/discord.png" />
-                            <span>@nt5.1</span>
-                        </li>
-                        <li>
-                            <img src="assets/social-icons/github.png" />
-                            <span><a href="https://github.com/n1d3v">@n1d3v</a></span>
-                        </li>
-                        <li>
-                            <img src="assets/social-icons/youtube.png" />
-                            <span><a href="https://youtube.com/@patricktbp">@patricktbp</a></span>
-                        </li>
-                        <li>
-                            <img src="assets/social-icons/tiktok.png" />
-                            <span><a href="https://tiktok.com/@patricktbp">@patricktbp</a></span>
-                        </li>
-                    </ul>
+                <div class="navigation-quicklinks">
+                    <a href="https://discord.com/users/1403109929669230655">
+                        <img src="Assets/Icons/Sidebar/Quicklinks/discord.svg" alt="Discord icon" class="navigation-quickicon">
+                    </a>
+                    <a href="https://github.com/n1d3v">
+                        <img src="Assets/Icons/Sidebar/Quicklinks/github.svg" alt="GitHub icon" class="navigation-quickicon">
+                    </a>
+                    <a href="https://ko-fi.com/patrickpbt">
+                        <img src="Assets/Icons/Sidebar/Quicklinks/ko-fi.svg" alt="Ko-fi icon" class="navigation-quickicon">
+                    </a>
                 </div>
-                <div class="about-user">
-                    <h1>Welcome!</h1>
-                    <p>I'm patricktbp, also known as bricktapper, a 17 year old from Ireland, however my heritage is Polish, so I know both English and Polish. I like messing around with technology, mainly computers and phones, but I'm open to other options aswell.</p>
-                    <h1>My Skills</h1>
-                    <p>I know a few languages, however I specialize in C# and Python mainly, but I have made C++ applications before. For the web, I use raw HTML and CSS with nearly no other frameworks involved. I'm also working on DirectUI documentation, you can find the source code for that <a href="https://github.com/n1d3v/dui-docs">here.</a> I've also worked on a few Windhawk mods in the past, most notable being <a href="https://windhawk.net/mods/classic-expand-buttons">Classic Expand Buttons</a> which adds the classic expand buttons from Windows 7.</p>
-                    <h1>My Projects</h1>
-                    <p>I'm working on a few projects at the moment, they are mainly to do with projects from around the 2010s era. One of my most popular projects at the moment is <a href="https://classic7.lol">Classic 7</a>, which is a Windows 10to7 mod that replicates Windows 7 nearly 1:1. Here's a list of the projects I am currently working on:</p>
-                    <ul class="projects-ul">
-                        <li>
-                            <span><a href="https://skymu.app">Skymu:</a> A Skype-like instant messenger that supports many platforms, such as Discord and others.</span>
-                        </li>
-                        <li>
-                            <span><a href="https://github.com/n1d3v/CobaltSky">CobaltSky:</a> An easy-to-use and feature-complete Bluesky client for Windows Phone 8.1</span>
-                        </li>
-                        <li>
-                            <span><a href="https://github.com/n1d3v/dui-docs">DirectUI Documentation:</a> A project that documents the undocumented markup language made by Microsoft.</span>
-                        </li>
-                        <li>
-                            <span><a href="https://github.com/n1d3v/GooBack">GooBack:</a> A fully custom frontend for Google that allows for the older designs to be used.</span>
-                        </li>
-                    </ul>
+                <div class="navigation-footer">
+                    <p>made with love by patricktbp ❤︎⁠</p>
+                    <p>you can find the source code <a href="https://github.com/n1d3v/n1d3v.github.io">here!</a></p>
+                </div>
+            </div>
+            <div class="page-content">
+                <div class="name-plate" id="home">
+                    <p class="hello-plate">hello, I'm...</p>
+                    <h1 class="header-plate">Patrick.</h1>
+                </div>
+                <div class="description-plate">
+                    <p class="simple-desc">I am a <span class="text-hl">software developer</span> and <span class="text-hl">graphics designer</span> based in <img src="Assets/Icons/Description/ie.png" alt="Irish tri-color flag" class="irish-flag-desc"> <span class="text-hl">Ireland</span>.</p>
+
+                    <p class="what-i-do">I like messing around with old <span class="text-hl">computers</span>, <span class="text-hl">phones</span> and old <span class="text-hl">software</span>. You can see this throughout my work.</p>
+
+                    <p class="more-info">I am an expert in desktop programming languages like <span class="text-hl">C#</span> and <span class="text-hl">C++</span>, I have also experienced my fair share of <span class="text-hl">Python</span> and working with mobile platforms like <span class="text-hl">Android</span>, <span class="text-hl">iOS</span> and <span class="text-hl">Windows phone</span>.</p>
+
+                    <p>My design work varies, mainly with project styles from the <span class="text-hl">2010s</span>. I love both <span class="text-hl">skeuomorphic</span> and <span class="text-hl">flat design</span> equally, both have great qualities and I love designing in both.</p>
+                </div>
+                <div class="work-section" id="showcase">
+                    <h1 class="work-header">My <span>design</span> and <span>programming</span> work</h1>
+
+                    <div class="portfolio">
+                        <div class="work-card">
+                            <div class="project-preview">
+                                <img src="Assets/Work/Design/naticord.png" alt="Naticord's icon" class="work-preview naticord">
+                            </div>
+                            <div class="project-info">
+                                <h3>Naticord</h3>
+                                <p>Naticord's design was meant to fit in with Windows and it looks amazing. Naticord was programmed and designed by me!</p>
+
+                                <a href="https://github.com/Naticord">
+                                    View the GitHub!
+                                    <img src="Assets/Icons/Cards/arrow.png" alt="Direction arrow">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="work-card">
+                            <div class="project-preview">
+                                <img src="Assets/Work/Design/classic7.png" alt="Classic 7's icon" class="work-preview classic7">
+                            </div>
+                            <div class="project-info">
+                                <h3>Classic 7</h3>
+                                <p>Classic 7's design work has been done by me, branding, stylizing, you name it. All Classic 7 asset material was made by me!</p>
+
+                                <a href="https://classic7.lol">
+                                    View the project!
+                                    <img src="Assets/Icons/Cards/arrow.png" alt="Direction arrow">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="work-card">
+                            <div class="project-preview">
+                                <img src="Assets/Work/Design/bluewire.svg" alt="Bluewire's wordmark" class="work-preview">
+                            </div>
+                            <div class="project-info">
+                                <h3>Bluewire</h3>
+                                <p>Bluewire's design, branding, and other details, inspired by Facebook has been faithfully recreated by me!</p>
+
+                                <a class="not-released">
+                                    Still not released...
+                                    <img src="Assets/Icons/Cards/blocked.png" alt="Blocked symbol">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-information" id="contact">
+                    <h1>Where you can <span>contact</span> me!</h1>
+
+                    <p>I am on various platforms, so you can find me if you look online, but I much rather be contacted on Discord than any other platform, you can find my profile on the sidebar under the <img src="Assets/Icons/Sidebar/Quicklinks/discord.svg" alt="Discord icon" class="contact-dsc-icon"> Discord icon.</p>
+
+                    <p>You may also e-mail me at <a href="mailto:somethingsomethingpatricktbp@gmail.com">my e-mail address</a> and I'll try to get back to you.</p>
+
+                    <p>If you do contact me, make sure it is actually for a valid reason and not something stupid, thank you!</p>
                 </div>
             </div>
         </div>

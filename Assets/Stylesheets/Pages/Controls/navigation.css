@@ -1,0 +1,160 @@
+.navigation-sidebar {
+    position: relative;
+
+    width: 255px;
+    height: 100%;
+    padding: 15px;
+
+    background: url(../../../Textures/fabric.png) var(--bg-sidebar);
+    box-shadow: inset -8px 0 20px -8px var(--shadow);
+}
+
+.navigation-sidebar p, .navigation-sidebar h3 {
+    color: var(--text);
+    text-shadow: var(--text-shadow);
+}
+
+.navigation-about {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding-bottom: 15px;
+}
+
+.navigation-about .avatar {
+    position: relative;
+    display: inline-block;
+
+    border-radius: 50%;
+}
+
+.navigation-about img {
+    display: block;
+
+    height: 45px;
+    border-radius: 50%;
+}
+
+.navigation-about .avatar::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    border-radius: 50%;
+    box-shadow:
+        inset 0 2px 4px rgba(0, 0, 0, 1),
+        inset 0 -1px 1px var(--divider);
+
+    pointer-events: none;
+}
+
+.navigation-about h3 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.navigation-about p {
+    font-size: 14px;
+    opacity: 0.6;
+}
+
+.navigation-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.navigation-links img, .navigation-quickicon {
+    height: 25px;
+    filter: drop-shadow(var(--text-shadow));
+}
+
+.navigation-button {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    border: none;
+    background: none;
+
+    cursor: pointer;
+    text-decoration: none;
+
+    transition: transform 0.15s ease;
+}
+
+.navigation-button:hover {
+    transform: translateX(4px);
+}
+
+.navigation-button::before {
+    content: "";
+
+    position: absolute;
+    top: 50%;
+    left: -15px;
+    transform: translateY(-50%);
+
+    width: 7.5px;
+    height: 100%;
+
+    background: rgba(255, 255, 255, 0.8);
+    mask:
+        linear-gradient(to bottom, transparent, #000 50%, transparent),
+        linear-gradient(to right, #000, transparent);
+    mask-composite: intersect;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: transform 0.15s ease, opacity 0.25s ease;
+}
+
+/* Glow fades in for the active item */
+.navigation-button.selected::before {
+    opacity: 1;
+}
+
+/* Keep the glow anchored while the selected button slides on hover */
+.navigation-button.selected:hover::before {
+    transform: translateX(-4px) translateY(-50%);
+}
+
+.navigation-quicklinks {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding-top: 10px;
+}
+
+.navigation-quickicon {
+    height: 15px;
+    opacity: 0.6;
+
+    transition: opacity 0.15s ease;
+}
+
+.navigation-quicklinks a:hover .navigation-quickicon {
+    opacity: 1;
+}
+
+.navigation-footer {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+}
+
+.navigation-footer p {
+    font-size: 12px;
+    opacity: 0.5;
+}
+
+.navigation-footer a {
+    font-size: 12px;
+}

@@ -1,0 +1,47 @@
+:root {
+    --font: 'Ubuntu', sans-serif;
+    --font-condensed: 'Ubuntu Condensed', sans-serif;
+
+    --text: #ffffff;
+    --text-muted: rgba(255, 255, 255, 0.65);
+
+    --bg-page: #262626;
+    --bg-sidebar: #000000;
+    --bg-card: #222222;
+
+    --border-card: #111111;
+    --divider: rgba(255, 255, 255, 0.15);
+    --edge-highlight: rgba(255, 255, 255, 0.5);
+
+    --text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+    --shadow: rgba(0, 0, 0, 0.65);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: var(--font);
+    font-size: 18px;
+
+    color: var(--text);
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background: url(../Textures/light-sketch.png) var(--bg-page);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}

@@ -1,0 +1,136 @@
+.work-card {
+    position: relative;
+
+    width: 330px; /* 3 cards per row */
+    height: fit-content;
+
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px var(--shadow);
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.work-card:hover {
+    box-shadow: 0 4px 8px var(--shadow);
+}
+
+.work-card::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    padding: 1px;
+    border-radius: 7px;
+
+    background: linear-gradient(180deg, var(--edge-highlight), rgba(255, 255, 255, 0) 60%);
+
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+
+    pointer-events: none;
+}
+
+.project-preview {
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+
+    border-radius: 8px 8px 0 0;
+
+    background-image:
+        url(../../../Textures/xv.png),
+        linear-gradient(180deg, #2e2e2e, #1d1d1d, #2e2e2e);
+    background-repeat: repeat, repeat;
+    background-size: auto, 100% 300px;
+    background-position: center, center 0;
+}
+
+.work-card:hover .project-preview {
+    animation: preview-flow 0.6s ease;
+}
+
+@keyframes preview-flow {
+    from {
+        background-position: center, center 0;
+    }
+
+    to {
+        background-position: center, center 300px;
+    }
+}
+
+.work-preview {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 240px;
+}
+
+.project-info {
+    position: relative;
+    z-index: 1;
+
+    padding: 10px 15px;
+
+    border-top: 1px solid transparent;
+    border-image: linear-gradient(
+        to right,
+        transparent,
+        rgba(255, 255, 255, 0.75),
+        transparent
+    ) 1;
+}
+
+.project-info h3 {
+    font-size: 24px;
+
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+
+    border-bottom: 1px solid var(--divider);
+}
+
+.project-info p {
+    font-size: 14px;
+    opacity: 0.65;
+}
+
+.project-info a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.project-info a img {
+    transition: transform 0.2s ease;
+}
+
+.project-info a[href]:hover img {
+    transform: translateX(4px);
+}
+
+.not-released {
+    opacity: 0.5;
+}
+
+.classic7, .naticord {
+    width: 30%;
+}
