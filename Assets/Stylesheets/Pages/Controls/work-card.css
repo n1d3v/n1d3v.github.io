@@ -1,7 +1,7 @@
 .work-card {
     position: relative;
 
-    width: 330px; /* 3 cards per row */
+    width: 100%; /* Fills the grid cell */
     height: fit-content;
 
     background-color: var(--bg-card);

@@ -9,7 +9,7 @@
 .page-content {
     flex: 1;
     height: 100%;
-    padding: 30px 0;
+    padding: 30px;
 
     display: flex;
     flex-direction: column;
@@ -25,7 +25,8 @@
 }
 
 .page-content > * {
-    width: 1000px;
+    width: 100%;
+    max-width: 1000px;
 }
 
 .page-content::-webkit-scrollbar {
@@ -103,8 +104,9 @@
 }
 
 .page-content .portfolio {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
 }
 
 .page-content .work-section h1, .page-content .contact-information h1 {
@@ -121,4 +123,16 @@
     color: var(--text);
     font-size: 32px;
     font-weight: 500;
+}
+
+@media (max-width: 1150px) {
+    .page-content .portfolio {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 850px) {
+    .page-content .portfolio {
+        grid-template-columns: 1fr;
+    }
 }
