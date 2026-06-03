@@ -136,3 +136,19 @@
         grid-template-columns: 1fr;
     }
 }
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .page-content > *,
+    .description-plate > *,
+    .contact-information > * {
+        flex-shrink: 0;
+    }
+
+    .page-content::after {
+        content: "";
+        display: block;
+
+        height: 30px;
+        flex-shrink: 0;
+    }
+}

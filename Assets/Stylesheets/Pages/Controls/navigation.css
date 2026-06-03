@@ -103,10 +103,14 @@
     height: 100%;
 
     background: rgba(255, 255, 255, 0.8);
+    -webkit-mask:
+        linear-gradient(to bottom, transparent, #000 50%, transparent),
+        linear-gradient(to right, #000, transparent);
     mask:
         linear-gradient(to bottom, transparent, #000 50%, transparent),
         linear-gradient(to right, #000, transparent);
-    mask-composite: intersect;
+    -webkit-mask-composite: source-in;
+            mask-composite: intersect;
 
     opacity: 0;
     pointer-events: none;
@@ -114,12 +118,10 @@
     transition: transform 0.15s ease, opacity 0.25s ease;
 }
 
-/* Glow fades in for the active item */
 .navigation-button.selected::before {
     opacity: 1;
 }
 
-/* Keep the glow anchored while the selected button slides on hover */
 .navigation-button.selected:hover::before {
     transform: translateX(-4px) translateY(-50%);
 }
@@ -157,4 +159,15 @@
 
 .navigation-footer a {
     font-size: 12px;
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .navigation-button::before {
+        display: none;
+    }
+
+    .navigation-quickicon {
+        width: 15px;
+        height: 15px;
+    }
 }
