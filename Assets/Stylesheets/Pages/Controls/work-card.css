@@ -134,6 +134,6 @@
     opacity: 0.5;
 }
 
-.classic7, .naticord {
-    width: 30%;
+.base-icon {
+    width: 100px;
 }

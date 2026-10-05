@@ -67,7 +67,7 @@
 }
 
 .navigation-links img, .navigation-quickicon {
-    height: 25px;
+    height: 30px;
     filter: drop-shadow(var(--text-shadow));
 }
 
